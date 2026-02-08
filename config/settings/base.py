@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # external
+    'rest_framework',
+    'drf_yasg',
     'storages',  # for minio
     # local
     'app',

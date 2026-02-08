@@ -1,7 +1,5 @@
 # DRF AI Image Labeler
 
-[//]: # (You found an easter egg!)
-
 # Notes
 Use `moondream:1.8b` from Ollama as an initial model.
 
@@ -25,7 +23,6 @@ Use `moondream:1.8b` from Ollama as an initial model.
 - ...
 
 ## API
-- Setup DRF.
 - Labels search.
 - Export processed images endpoint.
 - Tasks related endpoints.

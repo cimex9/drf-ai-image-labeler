@@ -11,6 +11,7 @@ import os
 
 # AI
 OLLAMA_SERVER_URL = os.environ["OLLAMA_SERVER_URL"].rstrip('/')
+OLLAMA_MODEL = os.environ["OLLAMA_MODEL"]
 
 # DB
 PG_DB_HOST = os.environ["PG_DB_HOST"]
