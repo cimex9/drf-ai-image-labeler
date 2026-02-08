@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pdm-lock-check
+        name: "Check PDM lock file hash matches pyproject.toml"
+        entry: pdm lock --check
+        language: system
+        pass_filenames: false
+        files: ^(pyproject\.toml|pdm\.lock)$

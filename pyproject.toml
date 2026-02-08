@@ -35,6 +35,7 @@ shell = "python manage.py shell"
 isort = "isort ."
 lint = "ruff check ."
 lint-fix = "ruff check . --fix"
+pre-commit-install = "pre-commit install"  # install .pre-commit-config.yaml hooks
 
 [tool.isort]
 skip = [
@@ -72,6 +73,7 @@ known-first-party = ["app", "config"]
 [dependency-groups]
 dev = [
     "isort>=7.0.0",
+    "pre-commit>=4.5.1",
 ]
 test = [
     "pytest>=9.0.2",
