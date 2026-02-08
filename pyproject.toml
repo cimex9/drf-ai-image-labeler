@@ -31,6 +31,17 @@ migrate = "python manage.py migrate"
 makemigrations = "python manage.py makemigrations"
 shell = "python manage.py shell"
 
+[tool.isort]
+skip = [
+    "venv",
+    ".venv",
+    "config",
+]
+skip_glob = [
+    "**/migrations/**",
+
+]
+
 [dependency-groups]
 dev = [
     "isort>=7.0.0",

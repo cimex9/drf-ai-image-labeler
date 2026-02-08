@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-from app.models import Label, Image
+from app.models import Image, Label
 
 User = get_user_model()
 
@@ -10,10 +10,12 @@ User = get_user_model()
 @admin.register(User)
 class UserAdmin(BaseUserAdmin): ...
 
+
 @admin.register(Label)
 class LabelAdmin(admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
+
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
