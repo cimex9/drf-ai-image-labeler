@@ -26,10 +26,15 @@ distribution = false
 
 [tool.pdm.scripts]
 dc = { shell="docker compose", env_file=".env" }
+
 server = "python manage.py runserver"
 migrate = "python manage.py migrate"
 makemigrations = "python manage.py makemigrations"
 shell = "python manage.py shell"
+
+isort = "isort ."
+lint = "ruff check ."
+lint-fix = "ruff check . --fix"
 
 [tool.isort]
 skip = [
@@ -42,6 +47,28 @@ skip_glob = [
 
 ]
 
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+fix = false
+
+exclude = [
+    "venv",
+    ".venv",
+    "config",
+    "**/migrations/**",
+]
+[tool.ruff.lint]
+select = [
+    "E",   # style errors
+    "F",   # logical errors
+    "I",   # import sorting
+    "B",   # bugbear (likely bugs)
+    "UP",  # pyupgrade
+]
+[tool.ruff.lint.isort]
+known-first-party = ["app", "config"]
+
 [dependency-groups]
 dev = [
     "isort>=7.0.0",
@@ -49,4 +76,7 @@ dev = [
 test = [
     "pytest>=9.0.2",
     "allure-pytest>=2.15.3",
+]
+lint = [
+    "ruff>=0.15.0",
 ]

@@ -9,8 +9,6 @@ Use `moondream:1.8b` from Ollama as an initial model.
 ## General
 - Define TODOs.
 - README.md.
-- Configure isort.
-- Add a linter + configure.
 - Configure logging.
 - Add a Dockerfile (will need to configure static files handling beforehand).
 - Create helm charts.
