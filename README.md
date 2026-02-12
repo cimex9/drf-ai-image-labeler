@@ -7,7 +7,7 @@ Use `moondream:1.8b` from Ollama as an initial model.
 ## General
 - Define TODOs.
 - README.md.
-- Configure logging.
+- Configure logging. See: https://docs.djangoproject.com/en/6.0/topics/logging/.
 - Add a Dockerfile (will need to configure static files handling beforehand).
 - Create helm charts.
   Note: DB migration init-container is needed.
