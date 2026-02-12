@@ -26,17 +26,36 @@ license = {text = "MIT"}
 distribution = false
 
 [tool.pdm.scripts]
-dc = { shell="docker compose", env_file=".env" }
+# Run `pdm run --list` for a nice view of commands.
 
-server = "python manage.py runserver"
-migrate = "python manage.py migrate"
-makemigrations = "python manage.py makemigrations"
-shell = "python manage.py shell"
+dc.help = "Utility PDM script which runs `docker-compose` after populating environment variables from .env file."
+dc.cmd="docker compose"
+dc.env_file=".env"
 
-isort = "isort ."
-lint = "ruff check ."
-lint-fix = "ruff check . --fix"
-pre-commit-install = "pre-commit install"  # install .pre-commit-config.yaml hooks
+server.help = "Start Django development server. Also serves static files."
+server.cmd = "python manage.py runserver"
+
+migrate.help = "Django 'migrate' command. Applies migration files to update database schema. Manages all apps."
+migrate.cmd = "python manage.py migrate"
+
+makemigrations.help = "Django 'makemigrations' command. Creates new migration files for apps."
+makemigrations.cmd = "python manage.py makemigrations"
+
+shell.help = "Runs Django interactive shell. Install 'dev' group dependencies to run an 'ipython' shell."
+shell.cmd = "python manage.py shell"
+
+isort.help = "Runs `isort` command in the project root with configurations from pyproject.toml."
+isort.cmd = "isort ."
+
+lint.help = "Runs `ruff` linter in the project root with configurations from pyproject.toml and only outputs the results."
+lint.cmd = "ruff check ."
+
+lint-fix.help = "Runs `ruff` linter in the project root with configurations from pyproject.toml and applies fixes to the issues."
+lint-fix.cmd = "ruff check . --fix"
+
+pre-commit-install.help = "Installs .pre-commit-config.yaml configurations into local .git/hooks directory."
+pre-commit-install.cmd = "pre-commit install"
+
 
 [tool.isort]
 skip = [
@@ -75,6 +94,7 @@ known-first-party = ["app", "config"]
 dev = [
     "isort>=7.0.0",
     "pre-commit>=4.5.1",
+    "ipython>=9.10.0",
 ]
 test = [
     "pytest>=9.0.2",
