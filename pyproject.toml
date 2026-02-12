@@ -56,6 +56,10 @@ lint-fix.cmd = "ruff check . --fix"
 pre-commit-install.help = "Installs .pre-commit-config.yaml configurations into local .git/hooks directory."
 pre-commit-install.cmd = "pre-commit install"
 
+# custom Django management commands
+init_s3_storage.help = "Initialize MinIO bucket and policies. Idempotent action."
+init_s3_storage.cmd = "python manage.py init_s3_storage"
+
 
 [tool.isort]
 skip = [
