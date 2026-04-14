@@ -61,6 +61,8 @@ pre-commit-install.cmd = "pre-commit install"
 init_s3_storage.help = "Initialize MinIO bucket and policies. Idempotent action."
 init_s3_storage.cmd = "python manage.py init_s3_storage"
 
+# tests
+unit_tests = "pytest tests/unit"
 
 [tool.isort]
 skip = [
@@ -104,6 +106,7 @@ dev = [
 test = [
     "pytest>=9.0.2",
     "allure-pytest>=2.15.3",
+    "pytest-django>=4.12.0",
 ]
 lint = [
     "ruff>=0.15.0",
