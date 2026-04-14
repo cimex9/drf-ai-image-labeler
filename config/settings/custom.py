@@ -3,7 +3,7 @@ This file contains non-django settings needed by the application itself.
 Also, it contains the environment variables defined by the applications.
 
 Requires that environment variables are only read from this file, never set or modified.
-Default environment variable values are defined in `default.env`.
+Default environment variable values are defined in `.default.env`.
 """
 
 import os

@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 load_dotenv(BASE_DIR / ".env", override=False)
-load_dotenv(BASE_DIR / "default.env", override=False)
+load_dotenv(BASE_DIR / ".default.env", override=False)
 
 from .custom import *  # type: ignore
 
