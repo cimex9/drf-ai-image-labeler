@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     # external
     'rest_framework',
     'drf_yasg',
+    'django_filters',
     'storages',  # for minio
     # local
     'app',
@@ -110,3 +111,12 @@ STORAGES = {
 }
 
 MEDIA_URL = "/media/"
+
+# DRF
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
