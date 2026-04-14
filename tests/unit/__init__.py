@@ -1,7 +1,9 @@
 from tests import TESTS_BASE_DIR
 
 UNIT_TESTS_BASE_DIR = TESTS_BASE_DIR / 'unit'
+UNIT_TESTS_OUT_DIR = UNIT_TESTS_BASE_DIR / 'out'
 
 __all__ = [
     'UNIT_TESTS_BASE_DIR',
+    'UNIT_TESTS_OUT_DIR',
 ]

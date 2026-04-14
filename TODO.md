@@ -26,5 +26,4 @@
 
 ## Testing
 - Add integration tests (with a selected Ollama model).
-- Setup Allure reports.
 - Setup code coverage.
