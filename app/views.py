@@ -1,18 +1,23 @@
-from django.http import JsonResponse
 from django.utils import timezone
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from app.filters import LabelFilter
 from app.models import Image, Label
 from app.serializers import AskWithImageSerializer, LabelSerializer
 from app.services import OllamaClient
 
 
-class LabelViewSet(viewsets.ModelViewSet):
+class LabelViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Label.objects.all()
     serializer_class = LabelSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["name", "created_at"]
+    filterset_class = LabelFilter
+    ordering_fields = ["created_at"]
 
 
 class AskWithImageAPIView(APIView):

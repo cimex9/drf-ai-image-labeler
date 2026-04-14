@@ -6,7 +6,7 @@ from app.models import Label
 class LabelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Label
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'name', 'description', 'created_at']
 
 
 class AskWithImageSerializer(serializers.Serializer):
