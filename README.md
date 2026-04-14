@@ -1,6 +1,6 @@
 # DRF AI Image Labeler
 
-The project is still in a draft.
+The project is still in a draft state.
 
 # Notes
 Use `moondream:1.8b` from Ollama as an initial model.
