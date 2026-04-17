@@ -6,10 +6,12 @@
 - Add a Dockerfile (will need to configure static files handling beforehand).
 - Create helm charts.
   Note: DB migration init-container is needed.
+- GitHub workflows with Helm charts deployment (need to think). 
+
+  **Note:** if yes, then need to set up Raspberry Pi as a GH runner. 
 - Remove TEMPLATES settings.
 - Django management command for an interactive first-time project setup.
-- Add ollama image pulling via optional 'dev' group dependency.
-  In a CLI command probably + with a suggested tested list of models.
+- Add ollama image pulling utility. In a CLI command probably + with a suggested tested list of models.
 - Commit some testing results reports for different models into the Git repo.
   - Different models, same models with different context sizes (or other parameters).
   - Allure HTML reports, probably.
