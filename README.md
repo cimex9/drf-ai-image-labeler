@@ -46,7 +46,7 @@ pdm sync --clean  # runtime + dev dependencies
 
 **Start services:**
 ```bash
-pdm run dc up  # Start Docker services (Ollama, PostgreSQL, MinIO, Redis)
+pdm run dc up  # Start Docker services (PostgreSQL, MinIO, Redis, Celery workers)
 ```
 About `dc` PDM script:
 ```toml
