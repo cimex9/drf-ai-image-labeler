@@ -17,6 +17,8 @@ dependencies = [
     "Pillow>=12.1.0",
     "drf-yasg>=1.21.14",
     "django-filter>=25.2",
+    "langchain>=1.2.15",
+    "langchain-ollama>=1.1.0",
 ]
 requires-python = "==3.13.*"
 readme = "README.md"
@@ -29,7 +31,7 @@ distribution = false
 [tool.pdm.scripts]
 # Run `pdm run --list` for a nice view of commands.
 
-dc.help = "Utility PDM script which runs `docker-compose` after populating environment variables from .env file."
+dc.help = "Utility PDM script which runs `docker compose` after populating environment variables from .env file."
 dc.cmd = "docker compose"
 dc.env_file = ".env"
 

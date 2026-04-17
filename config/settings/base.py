@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django_filters',
     'storages',  # for minio
     # local
-    'app',
+    'app.apps.AppConfig',
 ]
 
 MIDDLEWARE = [

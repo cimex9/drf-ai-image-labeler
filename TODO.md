@@ -1,10 +1,9 @@
 # TODO (done items not included)
 ## General
 - Define TODOs.
-- README.md.
+- README.md (still some work to do)
 - Configure logging. See: https://docs.djangoproject.com/en/6.0/topics/logging/.
 - Add a Dockerfile (will need to configure static files handling beforehand).
-- Migrate to langchain instead of manual REST API calling (+ support multiple VLM providers).
 - Create helm charts.
   Note: DB migration init-container is needed.
 - Remove TEMPLATES settings.
@@ -25,5 +24,6 @@
 
 
 ## Testing
-- Add integration tests (with a selected Ollama model).
+- Add integration tests (with a selected VLM model).
+  - Include tests to verify labels output quality for selected models.
 - Setup code coverage.

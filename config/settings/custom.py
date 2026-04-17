@@ -9,9 +9,11 @@ Default environment variable values are defined in `.default.env`.
 import os
 
 
-# AI
+# VLM-related
+VLM_PROVIDER = os.environ["VLM_PROVIDER"]
+VLM_MODEL = os.environ["VLM_MODEL"]
+## Ollama VLM provider
 OLLAMA_SERVER_URL = os.environ["OLLAMA_SERVER_URL"].rstrip('/')
-OLLAMA_MODEL = os.environ["OLLAMA_MODEL"]
 
 # DB
 PG_DB_HOST = os.environ["PG_DB_HOST"]
