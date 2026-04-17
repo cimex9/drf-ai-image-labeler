@@ -27,3 +27,8 @@
 - Add integration tests (with a selected VLM model).
   - Include tests to verify labels output quality for selected models.
 - Setup code coverage.
+
+## Other
+- Commit some testing results reports for different models into the Git repo.
+  - Different models, same models with different context sizes (or other parameters).
+  - Allure HTML reports, probably.
