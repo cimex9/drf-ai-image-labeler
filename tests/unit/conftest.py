@@ -1,7 +1,10 @@
+from unittest.mock import Mock
+
 import allure
+import pytest
 
 from tests.unit import UNIT_TESTS_OUT_DIR
-from tests.unit.fixtures import *  # type: ignore
+from tests.unit.fixtures import *  # noqa: F403, type: ignore
 
 
 def pytest_configure(config):
@@ -13,3 +16,16 @@ def pytest_configure(config):
 
 def pytest_runtest_setup(item):
     allure.dynamic.label("layer", "unit")
+
+
+@pytest.fixture(autouse=True)
+def mock_vlm_service(monkeypatch):
+    from app.services.vlm_client_service import VLMClientService
+
+    mock_service = Mock(spec=VLMClientService)
+    monkeypatch.setattr(
+        'app.services.vlm_client_service._vlm_service_instance',
+        mock_service
+    )
+
+    yield mock_service
