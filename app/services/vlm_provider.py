@@ -17,5 +17,4 @@ class VLMProvider(ABC):
         """Image formats this provider accepts. The first supported format is used."""
 
     @abstractmethod
-    def generate_labels(self, question: str, image) -> str:
-        ...
+    def generate_labels(self, question: str, image) -> str: ...
