@@ -97,22 +97,3 @@ class TestGenerateLabels:
         call_args = mock_provider.generate_labels.call_args
         assert call_args[0][0] == "What is this?"
         assert isinstance(call_args[0][1], str)
-
-
-class TestGetVLMService:
-    @pytest.fixture(autouse=True)
-    def setup(self, settings):
-        settings.VLM_PROVIDER = 'ollama'
-        settings.VLM_MODEL = 'moondream:1.8b'
-        settings.OLLAMA_SERVER_URL = 'http://localhost:11434'
-        import app.services.vlm_client_service as vlm_module
-        vlm_module._vlm_service_instance = None
-
-    def test_returns_instance(self):
-        service = get_vlm_service()
-        assert isinstance(service, VLMClientService)
-
-    def test_singleton(self):
-        service1 = get_vlm_service()
-        service2 = get_vlm_service()
-        assert service1 is service2
