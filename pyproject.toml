@@ -31,7 +31,7 @@ distribution = false
 [tool.pdm.scripts]
 # Run `pdm run --list` for a nice view of commands.
 
-dc.help = "Utility PDM script which runs `docker-compose` after populating environment variables from .env file."
+dc.help = "Utility PDM script which runs `docker compose` after populating environment variables from .env file."
 dc.cmd = "docker compose"
 dc.env_file = ".env"
 
