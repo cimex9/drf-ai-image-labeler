@@ -6,7 +6,6 @@ class ImageFormat(Enum):
     """Image formats providers can request."""
     BASE64 = "base64"
     BYTES = "bytes"
-    FILE_PATH = "file_path"
     PIL_IMAGE = "pil_image"
 
 
