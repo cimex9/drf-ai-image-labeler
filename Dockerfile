@@ -22,7 +22,7 @@ COPY --from=builder /build/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY manage.py LICENSE ./
+COPY manage.py LICENSE .default.env ./
 COPY config/ config/
 COPY app/ app/
 COPY static/ static/
