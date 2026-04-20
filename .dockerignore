@@ -1,0 +1,12 @@
+# in case building locally
+/.env
+/.pdm-python
+/.venv/
+/media/
+/staticfiles/
+
+# ---
+*.md
+/docker-compose.yml
+/.pre-commit-config.yaml
+/tests/
