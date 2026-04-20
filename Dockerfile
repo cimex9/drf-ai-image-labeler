@@ -22,7 +22,7 @@ COPY --from=builder /build/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY manage.py LICENSE .default.env ./
+COPY manage.py LICENSE .default.env gunicorn.conf.py ./
 COPY config/ config/
 COPY app/ app/
 COPY static/ static/

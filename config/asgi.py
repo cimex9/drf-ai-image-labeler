@@ -13,5 +13,6 @@ from django.core.asgi import get_asgi_application
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.prod')
+os.environ["_APP_INIT_SCRIPTS"] = '1'
 
 application = get_asgi_application()

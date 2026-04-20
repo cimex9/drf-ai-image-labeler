@@ -38,6 +38,7 @@ dc.cmd = "docker compose"
 dc.env_file = ".env"
 
 server.help = "Start Django development server. Also serves static files."
+server.env._APP_INIT_SCRIPTS = "1"
 server.cmd = "python manage.py runserver"
 
 gunicorn.help = "Start Gunicorn production server with 4 workers, 120s timeout, and logging to stdout."
