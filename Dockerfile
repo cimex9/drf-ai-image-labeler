@@ -25,6 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY manage.py LICENSE ./
 COPY config/ config/
 COPY app/ app/
+COPY static/ static/
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
