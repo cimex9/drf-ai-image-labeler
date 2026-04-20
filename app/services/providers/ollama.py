@@ -1,4 +1,4 @@
-from typing import Any, Union
+from typing import Any, Union, override
 
 from langchain_core.messages import HumanMessage
 from langchain_ollama import ChatOllama
@@ -17,9 +17,11 @@ class OllamaProvider(VLMProvider):
         )
 
     @property
+    @override
     def supported_formats(self) -> list[ImageFormat]:
         return [ImageFormat.BASE64]
 
+    @override
     def generate_labels(self, question: str, image: str) -> Union[list[Any], str]:
         message = HumanMessage(
             content=[
