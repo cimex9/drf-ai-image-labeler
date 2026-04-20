@@ -56,7 +56,7 @@ class TestFormatConversion:
         assert isinstance(result, Image.Image)
 
     def test_convert_unknown_format_raises_error(self, service):
-        mock_format = type('MockFormat', (), {'value': 'unknown'})()
+        mock_format = type('MockFormat', (), {'value': 'unknown', 'name': 'unknown'})()
         with pytest.raises(ValueError, match="Unknown format"):
             service._convert_format(b"data", mock_format)
 
