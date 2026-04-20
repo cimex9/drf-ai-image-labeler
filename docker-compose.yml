@@ -4,6 +4,33 @@
 # TODO: redis, celery workers
 
 services:
+  ai-image-labeler:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      PG_DB_HOST: postgres
+      PG_DB_PORT: ${PG_DB_PORT}
+      PG_DB_NAME: ${PG_DB_NAME}
+      PG_DB_USER: ${PG_DB_USER}
+      PG_DB_PASSWORD: ${PG_DB_PASSWORD}
+      VLM_PROVIDER: ${VLM_PROVIDER}
+      VLM_MODEL: ${VLM_MODEL}
+      OLLAMA_SERVER_URL: ${OLLAMA_SERVER_URL}
+      MINIO_URL: http://minio:9000
+      MINIO_USERNAME: ${MINIO_USERNAME}
+      MINIO_PASSWORD: ${MINIO_PASSWORD}
+      MINIO_BUCKET_NAME: ${MINIO_BUCKET_NAME}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    volumes:
+      - ./:/app
+      - ./media:/app/media
   minio:
     image: minio/minio:latest
     command: server /data --console-address ":9001"
@@ -23,6 +50,11 @@ services:
       POSTGRES_DB: ${PG_DB_NAME}
       POSTGRES_USER: ${PG_DB_USER}
       POSTGRES_PASSWORD: ${PG_DB_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_DB_USER} -d ${PG_DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

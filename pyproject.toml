@@ -19,6 +19,8 @@ dependencies = [
     "django-filter>=25.2",
     "langchain>=1.2.15",
     "langchain-ollama>=1.1.0",
+    "gunicorn>=23.0.0",
+    "whitenoise>=6.12.0",
 ]
 requires-python = "==3.13.*"
 readme = "README.md"
@@ -36,7 +38,11 @@ dc.cmd = "docker compose"
 dc.env_file = ".env"
 
 server.help = "Start Django development server. Also serves static files."
+server.env._APP_INIT_SCRIPTS = "1"
 server.cmd = "python manage.py runserver"
+
+gunicorn.help = "Start Gunicorn production server with 4 workers, 120s timeout, and logging to stdout."
+gunicorn.cmd = "gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 4 --timeout 120 --access-logfile - --error-logfile -"
 
 migrate.help = "Django 'migrate' command. Applies migration files to update database schema. Manages all apps."
 migrate.cmd = "python manage.py migrate"
