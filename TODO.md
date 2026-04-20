@@ -21,7 +21,7 @@
 
 
 ## Batch jobs
-- Setup Celery + Redis.
+- Setup Celery + RabbitMQ.
 - Initialize workers in docker-compose.yml for dev purposes.
 - ...
 

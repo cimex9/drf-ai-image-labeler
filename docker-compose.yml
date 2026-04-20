@@ -1,7 +1,7 @@
 # docker-compose.yml file for dev purposes.
 # Starts dependency services excluding Ollama.
 # Manage via `pdm run dc` command (`dc` for `docker compose`).
-# TODO: redis, celery workers
+# TODO: rabbitmq, celery workers
 
 services:
   ai-image-labeler:

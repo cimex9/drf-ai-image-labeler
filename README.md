@@ -3,7 +3,7 @@
 **Status:** In Development (see [TODO.md](./TODO.md) for remaining work)
 
 A Django REST Framework service for batch image labeling using AI. Upload images and the system asynchronously processes
-them using Vision Language Models (via Celery/Redis), generating labels using VLM models that are stored and linked in PostgreSQL.
+them using Vision Language Models (via Celery/RabbitMQ), generating labels using VLM models that are stored and linked in PostgreSQL.
 
 ### Example
 
@@ -46,7 +46,7 @@ pdm sync --clean  # runtime + dev dependencies
 
 **Start services:**
 ```bash
-pdm run dc up  # Start Docker services (PostgreSQL, MinIO, Redis, Celery workers)
+pdm run dc up  # Start Docker services (PostgreSQL, MinIO, RabbitMQ, Celery workers)
 ```
 About `dc` PDM script:
 ```toml
@@ -95,7 +95,7 @@ pdm run shell          # Django interactive shell
 ## Technologies Used
 - **Django + Django REST Framework** - REST API
 - **PostgreSQL** - Primary database
-- **Celery + Redis** - Asynchronous task processing
+- **Celery + RabbitMQ** - Asynchronous task processing
 - **Ollama** - Vision Language Model provider
 - **MinIO/S3** - Object storage
 - **PDM** - Python package management
