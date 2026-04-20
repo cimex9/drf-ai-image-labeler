@@ -3,7 +3,6 @@
 - Define TODOs.
 - README.md (still some work to do)
 - Configure logging. See: https://docs.djangoproject.com/en/6.0/topics/logging/.
-- Add a Dockerfile (will need to configure static files handling beforehand).
 - Create helm charts.
   Note: DB migration init-container is needed.
 - GitHub workflows with Helm charts deployment (need to think). 
